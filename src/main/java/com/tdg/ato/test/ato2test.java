@@ -1,4 +1,4 @@
-package com.tdg.ato.schedule;
+package com.tdg.ato.test;
 
 import com.tdg.ato.database.DbPoolConnection;
 import org.apache.http.NameValuePair;

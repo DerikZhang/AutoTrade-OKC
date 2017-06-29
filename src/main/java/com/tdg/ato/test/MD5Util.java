@@ -1,4 +1,4 @@
-package com.tdg.ato.schedule;
+package com.tdg.ato.test;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
