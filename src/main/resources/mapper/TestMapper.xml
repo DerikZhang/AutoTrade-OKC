@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tdg.ato.mapper.TestMapper">
+    <select id="selectByName" resultType="Test">
+        <![CDATA[
+            select id,name from test where name = #{name}
+       ]]>
+    </select>
+
+</mapper>
