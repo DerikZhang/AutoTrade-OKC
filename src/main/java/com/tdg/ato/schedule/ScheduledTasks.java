@@ -28,7 +28,7 @@ public class ScheduledTasks {
         logger.info(dateFormat.format(new Date())+" >>fixedRate执行....");
     }
 
-    @Scheduled(cron="5/10 * * * * ?")
+    @Scheduled(cron="0/5 * * * * ?")
     public void cronJob(){
         logger.info(dateFormat.format(new Date())+" >>cron执行....");
     }
