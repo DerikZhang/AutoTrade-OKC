@@ -1,23 +1,18 @@
 package com.bihang.api;
 
-import java.io.InputStream;
-import java.util.Map;
-
+import com.bihang.api.bean.BihangException;
+import com.bihang.api.util.Coder;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpDelete;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.client.methods.*;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.bihang.api.bean.BihangException;
-import com.bihang.api.util.Coder;
+import java.io.InputStream;
+import java.util.Map;
 
 public class HttpUtil {
 
@@ -34,7 +29,7 @@ public class HttpUtil {
 	
 	HttpUtil(String apiKey, String apiSecret,String accessToken, String host) {
 		if(host == null || host.length()<=0) {
-			this.baseUrl = "https://www.bihang.com";
+			this.baseUrl = "https://w.okcoin.cn";
 		} else {
 			this.baseUrl = host;
 		}
