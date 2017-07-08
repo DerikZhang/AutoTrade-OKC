@@ -22,7 +22,7 @@ public class MyBatisConfig {
     @Autowired
     private Environment env;
 
-    @Bean
+    @Bean(name = "dataSource")
     public DataSource getDataSource() throws Exception{
         Properties props = new Properties();
         props.put("driverClassName", env.getProperty("spring.datasource.driver-class-name"));

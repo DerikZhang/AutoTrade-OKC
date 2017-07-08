@@ -2,12 +2,17 @@ package com.tdg.ato.model;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
  * Created by DerikZhang on 2017/6/29.
  */
 @Component
+@Entity
 public class Test implements Serializable {
 
     @Override
@@ -18,7 +23,11 @@ public class Test implements Serializable {
                 '}';
     }
 
+    @Id
+    @GeneratedValue
     Long id;
+
+    @Column
     String name;
 
     public Long getId() {

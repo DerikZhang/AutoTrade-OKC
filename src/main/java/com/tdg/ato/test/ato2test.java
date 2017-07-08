@@ -4,6 +4,8 @@ import com.bihang.api.Bihang;
 import com.bihang.api.BihangBuilder;
 import com.bihang.api.bean.UserBalance;
 import com.tdg.ato.database.DbPoolConnection;
+import com.tdg.ato.utils.OkcoinHttp;
+import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -29,7 +31,12 @@ public class ato2test {
         // testdb(); // test to connect database
         // testhttp();// test http connect
 //        testOKCoin();
-        testBihang();
+//        testBihang();
+        OkcoinHttp okcHttp = new OkcoinHttp("okcoin.properties");
+        HttpEntity httpEntity = okcHttp.doPost("/api/v1/userinfo.do", new HashMap<>());
+        System.out.println("entity:" + EntityUtils.toString(httpEntity));
+        HttpEntity getEntity = okcHttp.doGet("/api/v1/ticker.do?symbol=ltc_cny", new HashMap<>());
+        System.out.println("getEntity:" + EntityUtils.toString(getEntity));
     }
 
     private static void testBihang() throws Exception {
